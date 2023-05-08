@@ -17,7 +17,7 @@ router.post("/createuser", [
     const salt = await bcrypt.genSalt(10);
     let secpassword = await bcrypt.hash(req.body.password, salt);
     try {
-        await User.create({
+       await User.create({
             name: req.body.name,
             password: secpassword,
             email: req.body.email,
