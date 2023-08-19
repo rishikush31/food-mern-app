@@ -5,7 +5,6 @@ const mongoDB = require('./db');
 const cors =require ("cors");
 const path=  require('path');
 
-mongoDB();
 app.use(cors());
 app.use(express.json());
 
@@ -32,3 +31,5 @@ app.use('/api/',require("./Routes/OrderData"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+mongoDB();
