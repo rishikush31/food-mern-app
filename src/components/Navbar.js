@@ -7,11 +7,11 @@ import { useCart } from './ContextReducer';
 export default function Navbar() {
   let data=useCart();
   const [cartView, setCartView] = useState(false)
-  const navigate = useNavigate()
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    navigate("/login")
-  }
+    const navigate = useNavigate()
+    const handleLogout = () => {
+      localStorage.removeItem("authToken");
+      navigate("/login")
+    }
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -41,7 +41,7 @@ export default function Navbar() {
                 <button className='btn bg-white text-success mx-2' onClick={()=>{setCartView(true)}}>My cart {" "}
                 <Badge pill bg="danger">{data.length}</Badge>
                 </button>
-              </div>
+              </div>                                    
                 {cartView ? <Modal onClose={() => setCartView(false)}><Cart></Cart></Modal> : ""}
                 <div>
                   <button className='btn bg-white text-danger mx-2' onClick={handleLogout}>Logout</button>

@@ -15,7 +15,6 @@ import MyOrders from './screens/MyOrders';
 function App() {
   return (
     <CartProvider>
-
       <Router>
         <>
           <Routes>

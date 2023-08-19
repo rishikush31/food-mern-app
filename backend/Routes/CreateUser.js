@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User')
-const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const jwtSecret = "MYnameisRishiKushFoodwebsiteHello";
+    const User = require('../models/User')
+    const { body, validationResult } = require('express-validator');
+    const bcrypt = require('bcryptjs');
+    const jwt = require('jsonwebtoken');
+    const jwtSecret = "MYnameisRishiKushFoodwebsiteHello";
 router.post("/createuser", [
     body('email').isEmail(),
     body('password', 'Incorrect Password').isLength({ min: 5 }),
@@ -19,7 +19,7 @@ router.post("/createuser", [
     try {
        await User.create({
             name: req.body.name,
-            password: secpassword,
+            password: secpassword,  
             email: req.body.email,
             location: req.body.location
         }).then(
@@ -29,7 +29,6 @@ router.post("/createuser", [
         console.log(error)
         res.json({ success: false });
     }
-
 })
 router.post("/login", [
     body('email').isEmail(),

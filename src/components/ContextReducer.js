@@ -11,7 +11,7 @@ const reducer = (state, action) => {
         case "DROP":
             let empArray = []
             return empArray
-        case "UPDATE":
+        case "UPDATE":     
             let arr = [...state]
             arr.find((food, index) => {
                 if (food.id === action.id) {

@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link,useNavigate } from 'react-router-dom'
+  import { Link,useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 export default function Login() {
   const [credentials, setCredentials] = useState({email: "", password: ""})
   let navigate=useNavigate()
   const handleSubmit = async (e) => {
       e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/login", {
+    const response = await fetch("/api/login", {
       method: 'POST',
     headers: {
       'Content-Type': 'application/json'
